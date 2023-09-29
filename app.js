@@ -1,0 +1,56 @@
+const timeLeft = document.getElementById('time-left')
+const button1 = document.getElementById('button1')
+
+//month day year
+const duedate = new Date('September 29, 2023 20:45:00')
+
+const second = 1000
+const minute = second * 60
+const hour = minute * 60
+const day = hour * 24
+let timerId
+var timer;
+var ele = document.getElementById('timer')
+
+function timer() {
+  var sec = 0;
+  timer = setInterval(() => {
+    ele.innerHTML = '00: ' + sec;
+    sec++;
+  }, 1000)
+
+}
+
+function bukain() {
+  window.open("https://bit.ly/hasilrecruitmenthtcup2023")
+}
+
+function countDown() {
+  const today = new Date()
+  const timeSpan = duedate - today
+  //milliseconds
+  console.log(timeSpan)
+
+  if (timeSpan <= -day) {
+    timeLeft.innerHTML = 'Hope you had a nice Birthday!!'
+    clearInterval(timerId)
+    return
+  }
+
+  if (timeSpan <= 0) {
+    timeLeft.innerHTML = 'Silahkan Klik Tombol Di Bawah Ini <br> <button onclick="bukain()">KLIK DISINI</button>'
+    clearInterval(timerId)
+    return
+  }
+
+
+  const days = Math.floor(timeSpan / day)
+  const hours = Math.floor((timeSpan % day) / hour)
+  const minutes = Math.floor((timeSpan % hour) / minute)
+  const seconds = Math.floor((timeSpan % minute) / second)
+
+  timeLeft.innerHTML =
+    days + 'Hari ' + hours + 'Jam ' + minutes + 'Menit ' + seconds + 'Detik '
+}
+
+timerId = setInterval(countDown, second)
