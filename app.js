@@ -2,7 +2,7 @@ const timeLeft = document.getElementById('time-left')
 const button1 = document.getElementById('button1')
 
 //month day year
-const duedate = new Date('September 29, 2023 20:45:00')
+const duedate = new Date('November 30, 2023 19:35:00')
 
 const second = 1000
 const minute = second * 60
@@ -22,7 +22,7 @@ function timer() {
 }
 
 function bukain() {
-  window.open("https://bit.ly/hasilrecruitmenthtcup2023")
+  window.open("https://bit.ly/PengumumanHasilSeleksiPengurusMPKOSIS2023_HT1")
 }
 
 function countDown() {
@@ -32,7 +32,7 @@ function countDown() {
   console.log(timeSpan)
 
   if (timeSpan <= -day) {
-    timeLeft.innerHTML = 'Hope you had a nice Birthday!!'
+    timeLeft.innerHTML = 'Semoga Menerima Apapun Hasilnya!'
     clearInterval(timerId)
     return
   }
